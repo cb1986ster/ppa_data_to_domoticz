@@ -47,6 +47,7 @@ def ppa_data_day(url = 'https://mapa.paa.gov.pl/'):
             date = [int(i) for i in re.findall(r"[\w']+", s[0])]
             date = datetime.datetime(*date)
             series.append( (date, float(s[1])) )
-        data_day[city]=series
+        
+        data_day[city]=sorted(series, key=lambda sample: sample[0])
 
     return data_day
