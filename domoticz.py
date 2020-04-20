@@ -10,7 +10,7 @@ def update_domoticz(statues, data, db_file='/opt/domoticz/domoticz.db'):
         for idx,value,date in data:
             idx = int(idx)
             value = float(value)
-            date = "{}-{}-{} {}:{}:{}".format(
+            date = "{:04}-{:02}-{:02} {:02}:{:02}:{:02}".format(
                 date.year,date.month,date.day,
                 date.hour,date.minute,date.second
             )
@@ -21,7 +21,7 @@ def update_domoticz(statues, data, db_file='/opt/domoticz/domoticz.db'):
         for idx,value,date in statues:
             idx = int(idx)
             value = float(value)
-            date = "{}-{}-{} {}:{}:{}".format(
+            date = "{:04}-{:02}-{:02} {:02}:{:02}:{:02}".format(
                 date.year,date.month,date.day,
                 date.hour,date.minute,date.second
             )
