@@ -1,7 +1,7 @@
 from session import session
 from model import City, Radiation
 from ppa_data import ppa_data_day
-from domoticz import raw_domoticz_put
+from domoticz import update_domoticz
 
 domoticz_data = []
 domoticz_statuses = []
