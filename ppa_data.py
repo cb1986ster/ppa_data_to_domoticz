@@ -46,8 +46,8 @@ def ppa_data_day(url = 'https://mapa.paa.gov.pl/'):
         for s in city_data['srednie_dobowe']:
             date = [int(i) for i in re.findall(r"[\w']+", s[0])]
             date = datetime.datetime(*date)
-            series.append( (date, float(s[1])) )
-        
+            series.append( (date, float(s[1]))/1000 )
+
         data_day[city]=sorted(series, key=lambda sample: sample[0])
 
     return data_day
